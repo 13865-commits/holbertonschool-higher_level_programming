@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
-This module defines a Rectangle class with a class attribute to count instances,
-along with private attributes, getters, setters, area, perimeter,
-string representation, official representation, and a destructor.
+This module defines a Rectangle class with a class attribute
+to count instances, along with private attributes, getters,
+setters, area, perimeter, string representation, official
+representation, and a destructor.
 """
 
 
@@ -21,7 +22,6 @@ class Rectangle:
         """
         self.width = width
         self.height = height
-        # Increment the instance counter when a new object is created
         Rectangle.number_of_instances += 1
 
     @property
@@ -80,5 +80,4 @@ class Rectangle:
     def __del__(self):
         """Print a message and decrement instance counter upon deletion."""
         print("Bye rectangle...")
-        # Decrement the instance counter when an object is deleted
         Rectangle.number_of_instances -= 1
