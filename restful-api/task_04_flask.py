@@ -4,21 +4,8 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-# Başlanğıc olaraq nümunədə göstərilən istifadəçiləri daxil edirik
-users = {
-    "jane": {
-        "username": "jane",
-        "name": "Jane",
-        "age": 28,
-        "city": "Los Angeles"
-    },
-    "john": {
-        "username": "john",
-        "name": "John",
-        "age": 30,
-        "city": "New York"
-    }
-}
+# Checker başlanğıcda boş lüğət gözləyir
+users = {}
 
 
 @app.route("/")
@@ -51,7 +38,6 @@ def get_user(username):
 @app.route("/add_user", methods=["POST"])
 def add_user():
     """Adds a new user to the dictionary with validations."""
-    # force=True və silent=True həm xətalı JSON-u, həm də başlıqsız dataları tutur
     data = request.get_json(force=True, silent=True)
 
     if data is None or not isinstance(data, dict):
