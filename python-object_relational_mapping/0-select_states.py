@@ -3,6 +3,7 @@
 import sys
 import MySQLdb
 
+
 if __name__ == "__main__":
     db = MySQLdb.connect(
         host="localhost",
@@ -12,7 +13,7 @@ if __name__ == "__main__":
         db=sys.argv[3]
     )
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    cursor.execucte("SELECT * FROM states ORDER BV id ASC")
     rows = cursor.fetchall()
     for row in rows:
         print(row)
