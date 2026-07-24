@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Lists all states from the database hbtn_0e_0_usa."""
-import sys
 import MySQLdb
+import sys
 
 
 if __name__ == "__main__":
@@ -12,10 +12,10 @@ if __name__ == "__main__":
         passwd=sys.argv[2],
         db=sys.argv[3]
     )
-    cursor = db.cursor()
-    cursor.execucte("SELECT * FROM states ORDER BV id ASC")
-    rows = cursor.fetchall()
-    for row in rows:
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    query_rows = cur.fetchall()
+    for row in query_rows:
         print(row)
-    cursor.close()
+    cur.close()
     db.close()
