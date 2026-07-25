@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Displays all values in the states table where name matches the argument."""
+"""
+Script that takes in an argument and displays all values
+in the states table of hbtn_0e_0_usa where name matches the argument.
+"""
 import MySQLdb
 import sys
 
@@ -15,8 +18,8 @@ if __name__ == "__main__":
     cur = db.cursor()
     query = (
         "SELECT * FROM states WHERE name = '{}' "
-        "ORDER BY states.id ASC"
-    ).format(sys.argv[4])
+        "ORDER BY states.id ASC".format(sys.argv[4])
+    )
     cur.execute(query)
     query_rows = cur.fetchall()
     for row in query_rows:
