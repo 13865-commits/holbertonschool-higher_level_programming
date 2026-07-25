@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-"""Displays all values in the states table safely from SQL injection."""
+"""
+Script that takes in an argument and displays all values
+in the states table of hbtn_0e_0_usa where name matches
+the argument, safe from SQL injection.
+"""
 import MySQLdb
 import sys
 
@@ -14,7 +18,7 @@ if __name__ == "__main__":
     )
     cur = db.cursor()
     cur.execute(
-        "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC",
+        "SELECT * FROM states WHERE name = %s ORDER BY id ASC",
         (sys.argv[4],)
     )
     query_rows = cur.fetchall()
